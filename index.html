@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop quality products with a simple and responsive shopping experience.">
+  <title>NovaCart | Online Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#">NovaCart<span>.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <button id="cartButton" type="button">🛒 Cart (<span id="cartCount">0</span>)</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">YOUR EVERYDAY MARKETPLACE</p>
+        <h1>Find your next<br>favorite thing.</h1>
+        <p>Explore useful products, discover new favorites, and enjoy easy shopping.</p>
+        <a class="shop-button" href="#products">Explore products →</a>
+      </div>
+      <div class="hero-art" aria-hidden="true">✦</div>
+    </section>
+
+    <section id="products" class="catalog">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">OUR COLLECTION</p>
+          <h2>Featured products</h2>
+        </div>
+        <p id="resultCount" aria-live="polite">Loading products...</p>
+      </div>
+
+      <div class="filters">
+        <label for="searchInput">Search products
+          <input id="searchInput" type="search" placeholder="Search by name...">
+        </label>
+        <label for="categoryFilter">Category
+          <select id="categoryFilter">
+            <option value="all">All categories</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Accessories">Accessories</option>
+            <option value="Home">Home</option>
+          </select>
+        </label>
+        <label for="sortFilter">Sort by
+          <select id="sortFilter">
+            <option value="default">Featured</option>
+            <option value="low">Price: Low to high</option>
+            <option value="high">Price: High to low</option>
+            <option value="name">Name: A–Z</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="productGrid" class="product-grid"></div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>Shopping made simple.</h2>
+      <p>Explore our demo store with searchable products, a shopping cart, and saved cart items.</p>
+    </section>
+  </main>
+
+  <dialog id="cartDialog" aria-labelledby="cartTitle">
+    <div class="cart-heading">
+      <h2 id="cartTitle">Your cart</h2>
+      <button id="closeCart" type="button" aria-label="Close cart">✕</button>
+    </div>
+    <div id="cartItems"></div>
+    <p id="cartTotal">Total: ₹0</p>
+    <button id="checkoutButton" type="button">Demo checkout</button>
+    <p id="checkoutMessage" role="status" aria-live="polite"></p>
+  </dialog>
+
+  <footer><p>NovaCart — Demo shopping experience</p></footer>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
